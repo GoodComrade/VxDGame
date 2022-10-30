@@ -5,19 +5,19 @@ using UnityEngine;
 public class InteractionUIRoot : UIRoot
 {
     [SerializeField]
-    private IneractionUIView menuView;
-    public IneractionUIView MenuView => menuView;
+    private IneractionUIView interactionView;
+    public IneractionUIView InteractionView => interactionView;
 
     public override void ShowRoot()
     {
         base.ShowRoot();
 
-        menuView.ShowView();
+        InteractionView.ShowView();
     }
 
     public override void HideRoot()
     {
-        menuView.HideView();
+        InteractionView.HideView();
 
         base.HideRoot();
     }

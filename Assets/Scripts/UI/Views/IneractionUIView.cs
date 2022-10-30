@@ -3,10 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class IneractionUIView : UIView
 {
+    public UnityAction OnCloseClicked;
+
+    private Animator animator;
+    private readonly int openHash = Animator.StringToHash("Open");
+
     // TODO: add events and displaying methods here
     [SerializeField] private Image npcInteractionPlaceholder;
     [SerializeField] private Image npcInteractionBackground;
@@ -14,14 +20,11 @@ public class IneractionUIView : UIView
     [SerializeField] private GameObject npcInteractionPanel;
     [SerializeField] private TextMeshProUGUI npcInteractionText;
 
-    private Animator animator;
-    private readonly int openHash = Animator.StringToHash("Open"); 
+    
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        npcInteractionPlaceholder = GetComponent<Image>();
-        npcInteractionBackground = GetComponent<Image>();
     }
 
     public override void ShowView()
@@ -32,8 +35,17 @@ public class IneractionUIView : UIView
 
     public override void HideView()
     {
-        animator.SetBool(openHash, false);
         base.HideView();
     }
 
+    public void CloseClicked()
+    {
+        OnCloseClicked?.Invoke();
+        animator.SetBool(openHash, false);
+    }
+
+    public void SetInteractorData(Sprite _npcInteractionPlaceholder)
+    {
+        npcInteractionPlaceholder.sprite = _npcInteractionPlaceholder;
+    }
 }

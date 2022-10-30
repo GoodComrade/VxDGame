@@ -25,6 +25,12 @@ public class UIRootController : MonoBehaviour
     private InventoryUIController inventoryController;
     [SerializeField]
     private SceneTransitionController sceneTransitionController;
+
+    public PlayerGameUIController PlayerGameUIController => playerGameController;
+    public MenuUIController MenuUIController => menuController;
+    public InteractionUIController InteractionUIController => interactionController;
+    public InventoryUIController InventoryUIController => inventoryController;
+    public SceneTransitionController SceneTransitionController => sceneTransitionController;
     
 
 
