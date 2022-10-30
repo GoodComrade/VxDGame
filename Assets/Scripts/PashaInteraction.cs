@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class PashaInteraction : MonoBehaviour
 {
-    [SerializeField] GameObject dialogue;
-    [SerializeField] private CameraFollow playerCamera;
-    public Transform dialoguetarget;
-    public float camTransitionSpeed;
+    [SerializeField] UIRootController dialogueUI;
 
     bool IsInteraction = false;
-    Animator animator;
-    int open;
 
     private void Start()
     {
-        animator = dialogue.GetComponent<Animator>();
-        open = Animator.StringToHash("Open");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,14 +34,13 @@ public class PashaInteraction : MonoBehaviour
 
     void EnableInteraction()
     {
-        dialogue.SetActive(true);
         IsInteraction = true;
-        animator.SetBool(open, IsInteraction);
+        dialogueUI.ChangeController(UIRootController.UIControllerTypeEnum.Interaction);
     }
 
     void DisableInteraction()
     {
         IsInteraction = false;
-        dialogue.SetActive(false);
+        dialogueUI.ChangeController(UIRootController.UIControllerTypeEnum.Player);
     }
 }
