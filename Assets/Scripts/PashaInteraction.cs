@@ -26,10 +26,11 @@ public class PashaInteraction : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.F) && other.tag == "Player" && !IsInteraction)
+        /*if (Input.GetKeyDown(KeyCode.F) && other.tag == "Player" && !IsInteraction)
             EnableInteraction();
         else if(Input.GetKeyDown(KeyCode.F) && other.tag == "Player" && IsInteraction)
             DisableInteraction();
+        */
     }
 
     void EnableInteraction()
