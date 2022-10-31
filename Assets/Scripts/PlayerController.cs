@@ -5,12 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    
     [SerializeField] private float playerSpeed;
     private PlayerInputConfig input;
 
     private void Awake()
     {
         input = new PlayerInputConfig();
+        GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
+    }
+
+    private void OnDestroy()
+    {
+        GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
     }
 
     private void OnEnable()
@@ -38,5 +45,10 @@ public class PlayerController : MonoBehaviour
             Quaternion toRot = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = toRot;
         }
+    }
+
+    private void OnGameStateChanged(GameState newGameState)
+    {
+        enabled = newGameState == GameState.Gameplay;
     }
 }

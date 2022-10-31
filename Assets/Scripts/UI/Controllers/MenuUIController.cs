@@ -14,4 +14,10 @@ public class MenuUIController : SubController<MenuUIRoot>
         //Unsubscribe on view events here
         base.DisableUIController();
     }
+
+    void CloseMenuCanvas()
+    {
+
+        root.ChangeController(UIRootController.UIControllerTypeEnum.Player);
+    }
 }
