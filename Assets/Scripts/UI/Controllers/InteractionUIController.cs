@@ -23,6 +23,10 @@ public class InteractionUIController : SubController<InteractionUIRoot>
         ui.InteractionView.OnCloseClicked -= CloseInteractionCanvas;
     }
 
+    public void SetInteractorData(Sprite _npcInteractionPlaceholder)
+    {
+        ui.InteractionView.SetInteractorData(_npcInteractionPlaceholder);
+    }
     void CloseInteractionCanvas()
     {
         root.ChangeController(UIRootController.UIControllerTypeEnum.Player);

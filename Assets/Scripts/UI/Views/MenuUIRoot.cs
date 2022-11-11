@@ -6,7 +6,7 @@ public class MenuUIRoot : UIRoot
 {
     [SerializeField]
     private MenuUIView menuView;
-    public MenuUIView InventoryView => menuView;
+    public MenuUIView MenuView => menuView;
     public override void ShowRoot()
     {
         base.ShowRoot();

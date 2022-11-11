@@ -33,7 +33,7 @@ public class Interactor : MonoBehaviour
     {
         if (Keyboard.current.fKey.wasPressedThisFrame && other.tag == "Player")
         {
-            UIRoot.InteractionUIController.UI.InteractionView.SetInteractorData(npcInteractionPlaceholder);
+            UIRoot.InteractionUIController.SetInteractorData(npcInteractionPlaceholder);
             EnableInteraction();
             //other.gameObject.GetComponent<PlayerController>().
         }

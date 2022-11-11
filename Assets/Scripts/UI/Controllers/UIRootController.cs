@@ -26,13 +26,20 @@ public class UIRootController : MonoBehaviour
     [SerializeField]
     private SceneTransitionController sceneTransitionController;
 
+    private Animator animator;
+
+    private readonly int openInteractHash = Animator.StringToHash("OpenInteraction");
+    private readonly int openMenuHash = Animator.StringToHash("OpenMenu");
+    private readonly int openInventoryHash = Animator.StringToHash("OpenInventory");
+    private readonly int openPlayerLayoutHash = Animator.StringToHash("OpenPlayer");
+
     public PlayerGameUIController PlayerGameUIController => playerGameController;
     public MenuUIController MenuUIController => menuController;
     public InteractionUIController InteractionUIController => interactionController;
     public InventoryUIController InventoryUIController => inventoryController;
     public SceneTransitionController SceneTransitionController => sceneTransitionController;
-    
 
+    public Animator Animator => animator;
 
     void Start()
     {
@@ -41,7 +48,7 @@ public class UIRootController : MonoBehaviour
         interactionController.root = this;
         inventoryController.root = this;
         sceneTransitionController.root = this;
-
+        animator = GetComponent<Animator>();
         ChangeController(UIControllerTypeEnum.Player);
     }
 

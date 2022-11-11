@@ -11,7 +11,7 @@ public class IneractionUIView : UIView
     public UnityAction OnCloseClicked;
 
     private Animator animator;
-    private readonly int openHash = Animator.StringToHash("Open");
+    
 
     // TODO: add events and displaying methods here
     [SerializeField] private Image npcInteractionPlaceholder;
@@ -30,18 +30,13 @@ public class IneractionUIView : UIView
     public override void ShowView()
     {
         base.ShowView();
-        animator.SetBool(openHash, true);
-    }
-
-    public override void HideView()
-    {
-        base.HideView();
+        //animator.SetBool(openHash, true);
     }
 
     public void CloseClicked()
     {
         OnCloseClicked?.Invoke();
-        animator.SetBool(openHash, false);
+        //animator.SetBool(openHash, false);
     }
 
     public void SetInteractorData(Sprite _npcInteractionPlaceholder)

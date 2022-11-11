@@ -917,6 +917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640632868}
   - component: {fileID: 640632869}
+  - component: {fileID: 640632870}
   m_Layer: 0
   m_Name: UIRootController
   m_TagString: Untagged
@@ -961,6 +962,26 @@ MonoBehaviour:
   interactionController: {fileID: 2105423455}
   inventoryController: {fileID: 444355949}
   sceneTransitionController: {fileID: 1889067176}
+--- !u!95 &640632870
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640632867}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8f1593bb5e169d4e9145aa5ba5e5a76, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1375,6 @@ GameObject:
   m_Component:
   - component: {fileID: 831358253}
   - component: {fileID: 831358254}
-  - component: {fileID: 831358255}
   m_Layer: 0
   m_Name: InteractionView
   m_TagString: Untagged
@@ -1403,26 +1423,6 @@ MonoBehaviour:
   npcInteractionTextHolder: {fileID: 1062615371}
   npcInteractionPanel: {fileID: 458778383}
   npcInteractionText: {fileID: 1279421146}
---- !u!95 &831358255
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831358252}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d8f1593bb5e169d4e9145aa5ba5e5a76, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1035769578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,7 +2742,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1657653318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 740999368}
+        m_TargetAssemblyTypeName: MenuUIView, Assembly-CSharp
+        m_MethodName: CloseClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1657653318
 MonoBehaviour:
   m_ObjectHideFlags: 0
